@@ -1,13 +1,9 @@
 // import * as logger from "firebase-functions/logger";
 const { onRequest } = require("firebase-functions/v2/https");
-const express = require("express");
+import * as express from 'express';
+import Widget from './database';
 const app = express();
 
-// Add middleware to authenticate requests
-// app.use(myMiddleware);
+app.get("/", (req, res) => res.send(Widget.test()));
 
-// build multiple CRUD interfaces:
-app.get("/", (req, res) => res.send("hello"));
-
-// Expose Express API as a single Cloud Function:
 exports.widgets = onRequest(app);
