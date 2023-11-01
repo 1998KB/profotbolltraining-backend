@@ -1,5 +1,8 @@
-import {test} from "./access";
+import {test, newTraining, getTrainings } from "./access";
+
 
 export default {
-    test : test
+    test : test,
+    newTraining : newTraining,
+    getTrainings : getTrainings
 }
